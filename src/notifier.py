@@ -1,5 +1,6 @@
 import platform
 
+
 def send_notification():
     """Envia uma notificação no Windows 10/11.
     Em outros SOs, apenas simula (print) para o CI não quebrar.
@@ -19,6 +20,7 @@ def send_notification():
     )
     notificacao.show()
     return True
+
 
 if __name__ == "__main__":
     send_notification()
