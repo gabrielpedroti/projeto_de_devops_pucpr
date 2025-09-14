@@ -1,50 +1,23 @@
-# Projeto de Notificações Windows (Faculdade - DevOps)
+## **Sistema de Notificações Windows (DevOps)**
 
-Este projeto em Python implementa um sistema simples de **notificações no Windows 10/11**,
-servindo como base para as atividades das semanas 2, 3 e 4 da disciplina de DevOps.
+Projeto desenvolvido na disciplina de **DevOps** na PUC-PR, com o objetivo de aplicar conceitos fundamentais de DevOps, como **CI/CD**, uso de **Docker**, práticas com **Git/GitHub** e automação de fluxos com **GitHub Actions**.
 
-## Objetivo
-- Demonstrar o uso de **CI/CD (Semana 2)** no GitHub Actions.
-- Empacotar o projeto em **Docker (Semana 3)**.
-- Consolidar o aprendizado em uma **atividade somativa (Semana 4)**.
+Para colocar tudo isso em prática, foi criado um projeto em **Python** que exibe notificações no **Windows 10/11**.  
+A mensagem usada como exemplo foi:
 
-## Como funciona
-A função principal envia uma notificação com a mensagem:
+> *"Verificar mensagens no WhatsApp e ordem de serviços"*
 
-> "Verificar mensagens no WhatsApp e ordem de serviços"
+No Windows, a notificação aparece normalmente na área de trabalho.  
+Em outros sistemas (Linux, macOS ou no próprio GitHub Actions), o comportamento é simulado via `print`, garantindo que o pipeline funcione em qualquer ambiente.
 
-## Como rodar localmente (Windows)
-```bash
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python src/notifier.py
-```
+---
 
-## Testes
-Os testes usam `pytest` para validar que a função principal roda sem erro.
+### **Etapas do Projeto**
+- **Atividade Formativa - Semana 2:** configuração do fluxo de **CI**, rodando testes automatizados (`pytest`) e checagem de estilo (`flake8`).  
+- **Atividade Formativa - Semana 3:** implementação do fluxo de **CD**, empacotando o projeto em um `.zip` publicado como artifact.  
+- **Somativa 1 - Semana 4:** criação de um **Dockerfile** e workflow para build e execução em container, validando a aplicação diretamente no GitHub Actions.
 
-```bash
-pytest -q
-```
+---
 
-## Estrutura
-```
-.
-├── .github/workflows/ci.yml
-├── requirements.txt
-├── src/notifier.py
-├── tests/test_notifier.py
-└── README.md
-```
-
-## Fluxo de CI/CD (Semana 2)
-- CI roda em **cada push e PR** para a branch `main`.
-- Pipeline executa:
-  - Instalação das dependências
-  - Lint (`flake8`)
-  - Testes (`pytest`)
-
-## Próximos passos
-- Semana 3: adicionar Dockerfile e rodar o app em container.
-- Semana 4: consolidar tudo na somativa.
+### **Status**
+O projeto segue em desenvolvimento, servindo como base prática para as proximas atividades da disciplina.  
