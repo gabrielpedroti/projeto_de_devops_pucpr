@@ -23,6 +23,7 @@ jobs:
           context: .
           push: false
           tags: local/notificador:semana4
+          load: true
 
       - name: Smoke test (run container)
         run: |
