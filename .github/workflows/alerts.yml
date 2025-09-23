@@ -5,6 +5,7 @@ on:
     workflows: ["CI"]
     types: [completed]
 
+# Permissões para comentar em PR e abrir issues
 permissions:
   contents: read
   issues: write
@@ -44,14 +45,25 @@ jobs:
               });
             }
 
-      - name: Create repo issue on failed push
-        if: ${{ github.event.workflow_run.event == 'push' && github.event.workflow_run.conclusion != 'success' }}
+      # Sempre cria uma Issue ao final do CI (sucesso ou falha) para evidência de alerta
+      - name: Create repo issue on result
         uses: actions/github-script@v7
         with:
           script: |
+            const run = context.payload.workflow_run;
+            const emoji = run.conclusion === 'success' ? '✅' : '❌';
+            const title = `${emoji} Alerta: CI ${run.conclusion} (run #${run.run_number})`;
+            const body = [
+              `Branch: \`${run.head_branch}\``,
+              `Workflow: **${run.name}**`,
+              `Event: ${run.event}`,
+              `Conclusão: **${run.conclusion}**`,
+              ``,
+              `Veja os detalhes em Actions.`
+            ].join('\n');
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `❌ Alerta: CI falhou (run #${context.payload.workflow_run.run_number})`,
-              body: `O workflow **${context.payload.workflow_run.name}** falhou no push para \`${context.payload.workflow_run.head_branch}\`.\n\nVeja os detalhes em Actions.`
-            })
+              title,
+              body
+            });
