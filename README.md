@@ -15,9 +15,19 @@ Em outros sistemas (Linux, macOS ou no próprio GitHub Actions), o comportamento
 ### **Etapas do Projeto**
 - **Atividade Formativa - Semana 2:** configuração do fluxo de **CI**, rodando testes automatizados (`pytest`) e checagem de estilo (`flake8`).  
 - **Atividade Formativa - Semana 3:** implementação do fluxo de **CD**, empacotando o projeto em um `.zip` publicado como artifact.  
-- **Somativa 1 - Semana 4:** criação de um **Dockerfile** e workflow para build e execução em container, validando a aplicação diretamente no GitHub Actions.
+- **Somativa 1 - Semana 4:** criação de um **Dockerfile** e workflow para build e execução em container, validando a aplicação diretamente no GitHub Actions.  
+- **Atividade Formativa - Semana 6:** configuração de workflow de **alertas**, que gera notificações automáticas em *Pull Requests* ou abre issues em caso de falhas no CI.  
+- **Somativa 2 - Semana 7:** adição de uma suíte de **testes unitários extras**, cobrindo diferentes cenários da aplicação, e validação desses testes dentro de uma **PR** com todos os workflows (CI, CD e Docker) executando com sucesso.
 
 ---
 
 ### **Status**
-O projeto segue em desenvolvimento, servindo como base prática para as proximas atividades da disciplina.  
+O projeto foi finalizado até a **Somativa 2 (Semana 7)**, servindo como prática completa dos principais conceitos de DevOps:  
+- **Integração Contínua (CI)**  
+- **Entrega Contínua (CD)**  
+- **Containerização com Docker**  
+- **Automação de fluxos no GitHub Actions**  
+- **Alertas automáticos**  
+- **Testes unitários em PR**
+
+Este repositório se mantém como base prática para consultas futuras e referência no aprendizado contínuo de DevOps.
